@@ -1,0 +1,23 @@
+{
+    "manifest_version": 2,
+    "name": "Demo Plugin",
+    "description": "This extension will show underline for a keyword",
+    "version": "1.0",
+    "browser_action": {
+     "default_icon": "icon.png",
+     "default_popup": "popup.html"
+    },
+     "content_scripts": [
+        {
+         "match_about_blank": true,
+          "js": ["googleDocs.js", "contentScript.js"],
+          "matches": ["https://docs.google.com/document/*"],
+          "run_at": "document_start"
+        }
+    ],
+    "permissions" : [
+        "declarativeContent",
+        "activeTab"
+    ]
+    
+}
